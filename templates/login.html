@@ -6,26 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+  
+  background: linear-gradient(90deg, rgb(2, 8, 44) 0%, rgb(45, 144, 186) 70%);
+  /* font-family: "Roboto", sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+     .login-page {
+  width: 400px;
+  padding: 6% 0 0;
+  margin: auto;
+}
+
+
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Login</h1>
-        </header>
-        <main>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="input-group">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" required>
-                </div>
-                <button type="submit">Login</button>
-            </form>
-        </main>
+<div id="loginpage" class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="username"/>
+        <input type="password" placeholder="password"/>
+        <button>login</button>
+      </form>
     </div>
-</body>
+  </div>
 </html>

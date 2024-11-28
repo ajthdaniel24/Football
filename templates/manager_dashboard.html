@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Dashboard</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <div class="container">
+    <div class="container-dash">
         <div class="sidebar">
             <h2>Manager Dashboard</h2>
             <ul>
@@ -37,7 +38,7 @@
             if (contentType === "create_player") {
                 contentDiv.innerHTML = `
                     <h4>Create Player Account</h4>
-                    <form>
+                    <form class="createplayer">
                         <label for="player-name">Player Name:</label>
                         <input type="text" id="player-name" name="player-name">
                         <label for="player-position">Position:</label>
@@ -59,7 +60,7 @@
                     <h4>Schedule Practice</h4>
                     <form>
                         <label for="practice-date">Date:</label>
-                        <input type="date" id="practice-date" name="practice-date">
+                        <input type="date" id="practice-date" name="practice-date" required>
                         <button type="submit">Schedule Practice</button>
                     </form>
                 `;
