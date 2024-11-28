@@ -1,0 +1,98 @@
+<!-- templates/dashboard/manager_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Manager Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="loadContent('create_player')">Create Player Account</a></li>
+                <li><a href="#" onclick="loadContent('create_team')">Create Team</a></li>
+                <li><a href="#" onclick="loadContent('schedule_practice')">Schedule Practice</a></li>
+                <li><a href="#" onclick="loadContent('schedule_matches')">Schedule Matches</a></li>
+                <li><a href="#" onclick="loadContent('rate_players')">Rate Players</a></li>
+                <li><a href="#" onclick="loadContent('accept_attendance')">Accept Attendance</a></li>
+                <li><a href="#" onclick="loadContent('view_player_ratings')">View Player Ratings</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h3>Welcome, Manager!</h3>
+            <div id="dynamic-content">
+                <p>Select an option from the left to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(contentType) {
+            const contentDiv = document.getElementById("dynamic-content");
+
+            if (contentType === "create_player") {
+                contentDiv.innerHTML = `
+                    <h4>Create Player Account</h4>
+                    <form>
+                        <label for="player-name">Player Name:</label>
+                        <input type="text" id="player-name" name="player-name">
+                        <label for="player-position">Position:</label>
+                        <input type="text" id="player-position" name="player-position">
+                        <button type="submit">Create Player</button>
+                    </form>
+                `;
+            } else if (contentType === "create_team") {
+                contentDiv.innerHTML = `
+                    <h4>Create Team</h4>
+                    <form>
+                        <label for="team-name">Team Name:</label>
+                        <input type="text" id="team-name" name="team-name">
+                        <button type="submit">Create Team</button>
+                    </form>
+                `;
+            } else if (contentType === "schedule_practice") {
+                contentDiv.innerHTML = `
+                    <h4>Schedule Practice</h4>
+                    <form>
+                        <label for="practice-date">Date:</label>
+                        <input type="date" id="practice-date" name="practice-date">
+                        <button type="submit">Schedule Practice</button>
+                    </form>
+                `;
+            } else if (contentType === "schedule_matches") {
+                contentDiv.innerHTML = `
+                    <h4>Schedule Matches</h4>
+                    <form>
+                        <label for="match-date">Match Date:</label>
+                        <input type="date" id="match-date" name="match-date">
+                        <button type="submit">Schedule Match</button>
+                    </form>
+                `;
+            } else if (contentType === "rate_players") {
+                contentDiv.innerHTML = `
+                    <h4>Rate Players</h4>
+                    <form>
+                        <label for="player-rating">Player Rating:</label>
+                        <input type="number" id="player-rating" name="player-rating" min="1" max="10">
+                        <button type="submit">Rate Player</button>
+                    </form>
+                `;
+            } else if (contentType === "accept_attendance") {
+                contentDiv.innerHTML = `
+                    <h4>Accept Attendance</h4>
+                    <p>Here you can approve or reject players' attendance requests.</p>
+                `;
+            } else if (contentType === "view_player_ratings") {
+                contentDiv.innerHTML = `
+                    <h4>View Player Ratings</h4>
+                    <p>View players' ratings over time.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

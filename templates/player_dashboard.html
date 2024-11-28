@@ -1,0 +1,52 @@
+<!-- templates/dashboard/player_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Player Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="loadContent('view_schedule')">View Schedule</a></li>
+                <li><a href="#" onclick="loadContent('mark_attendance')">Mark Attendance</a></li>
+                <li><a href="#" onclick="loadContent('view_performance')">View Performance</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h3>Welcome, Player!</h3>
+            <div id="dynamic-content">
+                <p>Select an option from the left to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(contentType) {
+            const contentDiv = document.getElementById("dynamic-content");
+
+            if (contentType === "view_schedule") {
+                contentDiv.innerHTML = `
+                    <h4>Your Schedule</h4>
+                    <p>View your upcoming practices and matches here.</p>
+                `;
+            } else if (contentType === "mark_attendance") {
+                contentDiv.innerHTML = `
+                    <h4>Mark Attendance</h4>
+                    <p>Mark your attendance for upcoming sessions.</p>
+                `;
+            } else if (contentType === "view_performance") {
+                contentDiv.innerHTML = `
+                    <h4>Performance Ratings</h4>
+                    <p>View your performance ratings over time here.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

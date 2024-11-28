@@ -1,0 +1,58 @@
+<!-- templates/dashboard/admin_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="loadContent('create_manager')">Create Manager</a></li>
+                <li><a href="#" onclick="loadContent('view_managers')">View Managers</a></li>
+                <li><a href="#" onclick="loadContent('view_teams')">View Teams</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h3>Welcome, Admin!</h3>
+            <div id="dynamic-content">
+                <p>Select an option from the left to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(contentType) {
+            const contentDiv = document.getElementById("dynamic-content");
+
+            if (contentType === "create_manager") {
+                contentDiv.innerHTML = `
+                    <h4>Create Manager</h4>
+                    <form>
+                        <label for="manager-name">Name:</label>
+                        <input type="text" id="manager-name" name="manager-name">
+                        <label for="manager-email">Email:</label>
+                        <input type="email" id="manager-email" name="manager-email">
+                        <button type="submit">Create Manager</button>
+                    </form>
+                `;
+            } else if (contentType === "view_managers") {
+                contentDiv.innerHTML = `
+                    <h4>View Managers</h4>
+                    <p>Here you can see the list of managers.</p>
+                `;
+            } else if (contentType === "view_teams") {
+                contentDiv.innerHTML = `
+                    <h4>View Teams</h4>
+                    <p>Here you can see the list of teams managed by different managers.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
