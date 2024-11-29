@@ -41,8 +41,16 @@
                     <form class="createplayer">
                         <label for="player-name">Player Name:</label>
                         <input type="text" id="player-name" name="player-name">
+                        <br>
+                        <label for="player-id">Player ID:</label>
+                        <input type="text" id="player-id" name="player-id">
+                        <br>
+                        <label for="player-password">Player Password:</label>
+                        <input type="text" id="player-password" name="player-password">
+                        <br>
                         <label for="player-position">Position:</label>
                         <input type="text" id="player-position" name="player-position">
+                        <br>
                         <button type="submit">Create Player</button>
                     </form>
                 `;
@@ -52,7 +60,18 @@
                     <form>
                         <label for="team-name">Team Name:</label>
                         <input type="text" id="team-name" name="team-name">
+                        <label for="team-id">Team ID:</label>
+                        <input type="text" id="team-id" name="team-id">
                         <button type="submit">Create Team</button>
+                        <br>
+                        <p>Add players to team</p>
+                        <label for="plteam-id">Team ID:</label>
+                        <input type="text" id="plteam-id" name="plteam-id">
+                        <br>
+                        <label for="addplayer-id">Player ID:</label>
+                        <input type="text" id="addplayer-id" name="addplayer-id">
+                        <br>
+                        <button type="submit">Add Player</button>
                     </form>
                 `;
             } else if (contentType === "schedule_practice") {
@@ -61,6 +80,8 @@
                     <form>
                         <label for="practice-date">Date:</label>
                         <input type="date" id="practice-date" name="practice-date" required>
+                        <label for="practice-time">Time:</label>
+                        <input type="time" id="practice-time" name="practice-time" required>
                         <button type="submit">Schedule Practice</button>
                     </form>
                 `;
@@ -70,6 +91,8 @@
                     <form>
                         <label for="match-date">Match Date:</label>
                         <input type="date" id="match-date" name="match-date">
+                        <label for="match-time">Time:</label>
+                        <input type="time" id="match-time" name="match-time" required>
                         <button type="submit">Schedule Match</button>
                     </form>
                 `;
@@ -77,8 +100,32 @@
                 contentDiv.innerHTML = `
                     <h4>Rate Players</h4>
                     <form>
-                        <label for="player-rating">Player Rating:</label>
-                        <input type="number" id="player-rating" name="player-rating" min="1" max="10">
+                        <label for="player-id">Player ID:</label>
+                        <input type="text" id="player-id" name="player-name">
+                        <label for="rating-date">Rating Date:</label>
+                        <input type="date" id="rating-date" name="rating-date">
+                        <br>
+                        <label for="physical-rating">Physical Rating:</label>
+                        <input type="number" id="physical-rating" name="physical-rating" min="1" max="100">
+                        <br>
+                        <label for="pace-rating">Pace Rating:</label>
+                        <input type="number" id="pace-rating" name="pace-rating" min="1" max="100">
+                        <br>
+                        <label for="shooting-rating">Shooting Rating:</label>
+                        <input type="number" id="shooting-rating" name="shooting-rating" min="1" max="100">
+                        <br>
+                        <label for="defending-rating">Defending Rating:</label>
+                        <input type="number" id="defending-rating" name="defending-rating" min="1" max="100">
+                        <br>
+                        <label for="passing-rating">Passing Rating:</label>
+                        <input type="number" id="passing-rating" name="passing-rating" min="1" max="100">
+                        <br>
+                        <label for="dribling-rating">Dribling Rating:</label>
+                        <input type="number" id="dribling-rating" name="dribling-rating" min="1" max="100">
+                        <br>
+                        <label for="overall-rating">Overall Rating:</label>
+                        <input type="number" id="overall-rating" name="overall-rating" min="1" max="100">
+                        <br>
                         <button type="submit">Rate Player</button>
                     </form>
                 `;

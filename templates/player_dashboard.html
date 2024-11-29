@@ -68,6 +68,7 @@
                 <li><a href="#" onclick="loadContent('view_schedule')">View Schedule</a></li>
                 <li><a href="#" onclick="loadContent('mark_attendance')">Mark Attendance</a></li>
                 <li><a href="#" onclick="loadContent('view_performance')">View Performance</a></li>
+                <li><a href="#" onclick="loadContent('view_attandance')">View Attandance</a></li>
                 <li><a href="#">Log out</a></li>
             </ul>
         </div>
@@ -92,11 +93,25 @@
                 contentDiv.innerHTML = `
                     <h4>Mark Attendance</h4>
                     <p>Mark your attendance for upcoming sessions.</p>
+                    <form>
+                        <label for="att-date">Date:</label>
+                        <input type="date" id="att-date" name="att-date" required>
+                        <label for="start-time">Start Time:</label>
+                        <input type="time" id="start-time" name="start-time" required>
+                        <label for="end-time">End Time:</label>
+                        <input type="time" id="end-time" name="end-time" required>
+                        <button type="submit">Schedule Practice</button>
+                    </form>
                 `;
             } else if (contentType === "view_performance") {
                 contentDiv.innerHTML = `
                     <h4>Performance Ratings</h4>
                     <p>View your performance ratings over time here.</p>
+                `;
+            } else if (contentType === "view_attandance") {
+                contentDiv.innerHTML = `
+                    <h4>Attandance</h4>
+                    <p>View your attandance over time here.</p>
                 `;
             }
         }
